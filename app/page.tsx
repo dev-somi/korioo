@@ -1,4 +1,5 @@
 import { BarChart3, MapPin, PhoneCall, Users } from "lucide-react";
+import Image from "next/image";
 import { cookies } from "next/headers";
 import { ScrollBlackHeader } from "./components/ScrollBlackHeader";
 
@@ -126,7 +127,19 @@ export default async function Home() {
             <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2">
               <div className="group relative rounded-3xl overflow-hidden bg-[#FE644B] aspect-[4/5] md:aspect-square flex flex-col pt-10">
                 <div className="relative z-10 text-center mb-6"><p className="font-extrabold text-zinc-900 text-lg sm:text-xl tracking-tight leading-snug px-4">{copy.goalsCard1}</p></div>
-                <div className="relative flex-1 w-full mx-auto px-6"><img src="https://images.unsplash.com/photo-1543269664-56d5d372785a?auto=format&fit=crop&w=800&q=80" alt={copy.goalsCard1} className="absolute inset-0 w-full h-full object-cover opacity-80" loading="lazy" /><div className="absolute inset-0 bg-gradient-to-t from-[#FE644B] via-transparent to-transparent opacity-60" /></div>
+                <div className="relative flex-1 w-full mx-auto px-6 pb-6">
+                  <div className="relative h-full w-full overflow-hidden rounded-[2rem] bg-[#FF9B7D]/60 ring-1 ring-black/5">
+                    <Image
+                      src="/focus-goal-illustration.svg"
+                      alt={copy.goalsCard1}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-contain p-4 sm:p-6"
+                      priority={locale === "ko"}
+                    />
+                  </div>
+                  <div className="pointer-events-none absolute inset-x-6 bottom-6 h-28 rounded-b-[2rem] bg-gradient-to-t from-[#FE644B]/60 via-[#FE644B]/10 to-transparent" />
+                </div>
               </div>
               <div className="group relative rounded-3xl overflow-hidden bg-[#D3D0C5] aspect-[4/5] md:aspect-square flex flex-col pt-10">
                 <div className="relative z-10 text-center mb-6"><p className="font-extrabold text-zinc-900 text-lg sm:text-xl tracking-tight leading-snug px-4">{copy.goalsCard2}</p></div>
