@@ -51,6 +51,31 @@ This project follows an editorial, minimal, and warm design system inspired by m
 - **Generous Gaps**: `gap-8`, `gap-12`, or `gap-16` between major sections.
 - **Section Padding**: `py-24` or `py-32` for top-level landing page sections.
 
+## 6. Layout Patterns
+
+- **Landing / Hero**: Full-width asymmetric layout. Text left, visual right. 
+  절대 center-aligned form 구조 금지.
+- **Dashboard**: Sidebar + main content. Cards는 grid로, 단독 배치 금지.
+- **List/Feed pages**: Wide content area (`max-w-5xl`+), not narrow `max-w-md`.
+- **Forms/Auth only**: Centered narrow card (`max-w-md`) 허용.
+
+## 7. Anti-Patterns (Do NOT)
+
+- ❌ `max-w-md` + `mx-auto` + single card = 로그인 페이지처럼 보임. Auth 외 사용 금지.
+- ❌ 모든 섹션을 `flex-col items-center` 중앙 정렬하기.
+- ❌ 페이지 전체를 하나의 `rounded-3xl` 카드 안에 넣기.
+- ❌ 배경색 없이 흰 카드만 반복 배치.
+
+## 8. Content Width Guidelines
+
+| Page Type     | Max Width     | Layout         |
+|---------------|---------------|----------------|
+| Auth (login)  | `max-w-md`    | Centered card  |
+| Settings      | `max-w-2xl`   | Single column  |
+| Dashboard     | `max-w-6xl`   | Grid / sidebar |
+| Landing       | Full-width    | Asymmetric     |
+| Article/Learn | `max-w-3xl`   | Reading layout |
+
 ---
 
 *Note: This design system is currently being rolled out across the application to replace older, high-contrast colorful patterns.*
