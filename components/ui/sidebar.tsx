@@ -56,7 +56,7 @@ export default function Sidebar() {
     const NavItem = ({ item }: { item: any }) => {
         // 현재 보고 있는 페이지와 메뉴가 같으면 '활성화(색깔 변경)' 상태로 만듭니다.
         const isActive = pathname?.startsWith(item.href);
-        
+
         return (
             <Link
                 href={item.href}
@@ -78,9 +78,9 @@ export default function Sidebar() {
      */
     return (
         <aside className="w-64 shrink-0 bg-white border-r border-zinc-200 flex flex-col p-6 min-h-screen sticky top-0">
-            {/* 로고 영역: 클릭하면 캘린더 페이지로 이동합니다. */}
+            {/* 로고 영역: 클릭하면 대시보드 페이지로 이동합니다. */}
             <div className="mb-8 px-4">
-                <Link href="/tutor/calendar">
+                <Link href="/tutor/dashboard">
                     <h2 className="text-xl font-bold tracking-tight text-zinc-900 group-hover:text-[#F25C1E] transition-colors">
                         Korioo <span className="font-light italic text-zinc-500">Tutor</span>
                     </h2>
@@ -102,4 +102,4 @@ export default function Sidebar() {
             </div>
         </aside>
     );
-}
+}
